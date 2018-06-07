@@ -7,6 +7,7 @@ const code = `(() => {
       el.parentNode.removeChild(el)
     }
   }
+  document.body.style.overflow = 'visible'
 })()`
 
 chrome.browserAction.onClicked.addListener(() => {
