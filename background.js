@@ -8,6 +8,7 @@ const code = `(() => {
     }
   }
   document.body.style.overflow = 'visible'
+  document.documentElement.style.overflow = 'visible'
 })()`
 
 chrome.browserAction.onClicked.addListener(() => {
