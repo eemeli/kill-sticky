@@ -11,6 +11,9 @@ for (let i = 0; i < elements.length; i++) {
     el.parentNode.removeChild(el)
   }
 }
+const fix = '; overflow: visible !important'
+document.body.style.cssText += fix
+document.documentElement.style.cssText += fix
 ```
 
 To change the keyboard shortcut, visit the page [`chrome://extensions/shortcuts`](chrome://extensions/shortcuts).
