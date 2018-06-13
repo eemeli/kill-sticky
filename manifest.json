@@ -9,7 +9,7 @@
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
-        "default": "Ctrl+Shift+K",
+        "default": "Alt+K",
         "mac": "Command+K"
       }
     }
