@@ -2,8 +2,8 @@ const code = `(() => {
   const elements = document.querySelectorAll('body *')
   for (let i = 0; i < elements.length; i++) {
     const el = elements[i]
-    const pos = window.getComputedStyle(el).position
-    if (pos === 'fixed' || pos === 'sticky') {
+    const computedStyle = window.getComputedStyle(el);
+    if ((computedStyle.position === 'fixed' || computedStyle.position === 'sticky') && computedStyle.display !== 'none') {
       el.parentNode.removeChild(el)
     }
   }
