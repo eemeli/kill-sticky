@@ -18,5 +18,5 @@
   "manifest_version": 2,
   "name": "Kill-Sticky",
   "permissions": ["activeTab"],
-  "version": "1.3.0"
+  "version": "1.4.0"
 }
