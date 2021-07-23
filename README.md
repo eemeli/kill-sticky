@@ -1,6 +1,6 @@
-# Kill-Sticky Chrome Extension
+# Kill-Sticky-Shortcut
 
-A Chrome Extension based on the [Kill sticky headers](https://alisdair.mcdiarmid.org/kill-sticky-headers/) bookmarklet by Alisdair McDiarmid, this adds a keyboard shortcut (**Alt+K** on Windows & Linux, **Cmd+K** on macOS) that runs this bit of JavaScript on the current page:
+A browser Extension based on the [Kill sticky headers](https://alisdair.mcdiarmid.org/kill-sticky-headers/) bookmarklet by Alisdair McDiarmid, this adds a keyboard shortcut (**Alt+Period** on Windows & Linux, **Cmd+Period** on macOS) that runs this bit of JavaScript on the current page:
 
 ```js
 const elements = document.querySelectorAll('body *')
@@ -16,6 +16,6 @@ document.body.style.cssText += fix
 document.documentElement.style.cssText += fix
 ```
 
-To change the keyboard shortcut, visit the page [`chrome://extensions/shortcuts`](chrome://extensions/shortcuts).
+To change the keyboard shortcut, visit the page [`chrome://extensions/shortcuts`](chrome://extensions/shortcuts) in Chrome or select "Manage Extension Shortcuts" option at `about:addons` in Firefox.
 
 Released as open source under the [ISC license](LICENSE).

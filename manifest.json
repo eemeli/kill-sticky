@@ -9,14 +9,14 @@
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
-        "default": "Alt+K",
-        "mac": "Command+K"
+        "default": "Alt+Period",
+        "mac": "Command+Period"
       }
     }
   },
   "description": "Remove all elements with fixed or sticky positions",
   "manifest_version": 2,
-  "name": "Kill-Sticky",
+  "name": "Kill-Sticky-Shortcut",
   "permissions": ["activeTab"],
-  "version": "1.4.0"
+  "version": "1.5.0"
 }
