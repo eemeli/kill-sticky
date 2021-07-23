@@ -18,4 +18,4 @@ document.documentElement.style.cssText += fix
 
 To change the keyboard shortcut, visit the page [`chrome://extensions/shortcuts`](chrome://extensions/shortcuts) in Chrome or select "Manage Extension Shortcuts" option at `about:addons` in Firefox.
 
-Released as open source under the [ISC license](LICENSE).
+Released as open source under the [MIT license](LICENSE).
