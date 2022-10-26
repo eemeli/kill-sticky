@@ -1,22 +1,26 @@
 {
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+  "manifest_version": 3,
+  "name": "Kill-Sticky-Shortcut",
+  "version": "1.6.0",
+  "description": "Remove all elements with fixed or sticky positions",
+  "permissions": ["activeTab", "scripting"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{aff72382-db19-43e4-ae25-657acfdd60cd}"
+    }
   },
-  "browser_action": {
+  "action": {
     "default_title": "Remove sticky elements"
   },
+  "background": {
+    "scripts": ["background.js"]
+  },
   "commands": {
-    "_execute_browser_action": {
+    "_execute_action": {
       "suggested_key": {
         "default": "Alt+Period",
         "mac": "Command+Period"
       }
     }
-  },
-  "description": "Remove all elements with fixed or sticky positions",
-  "manifest_version": 2,
-  "name": "Kill-Sticky-Shortcut",
-  "permissions": ["activeTab"],
-  "version": "1.6.0"
+  }
 }
