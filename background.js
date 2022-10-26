@@ -1,17 +1,26 @@
-const code = `(() => {
-  const elements = document.querySelectorAll('body *')
-  for (let i = 0; i < elements.length; i++) {
-    const el = elements[i]
-    const { display, position } = window.getComputedStyle(el)
-    if ((position === 'fixed' || position === 'sticky') && display !== 'none') {
-      el.parentNode.removeChild(el)
+const func = () => {
+  function killSticky(root) {
+    const iter = document.createNodeIterator(root, NodeFilter.SHOW_ELEMENT);
+    let node;
+    while ((node = iter.nextNode())) {
+      const { display, position } = window.getComputedStyle(node);
+      if (
+        (position === "fixed" || position === "sticky") &&
+        display !== "none"
+      ) {
+        node.parentNode.removeChild(node);
+      } else {
+        const shadowRoot = node.openOrClosedShadowRoot;
+        if (shadowRoot) killSticky(shadowRoot);
+      }
     }
   }
-  const fix = '; overflow: visible !important; position: relative !important'
-  document.body.style.cssText += fix
-  document.documentElement.style.cssText += fix
-})()`
+  killSticky(document.body);
+  const fix = "; overflow: visible !important; position: relative !important";
+  document.body.style.cssText += fix;
+  document.documentElement.style.cssText += fix;
+};
 
 chrome.browserAction.onClicked.addListener(() => {
-  chrome.tabs.executeScript({ code })
-})
+  chrome.tabs.executeScript({ code: `(${func.toString()})()` });
+});
