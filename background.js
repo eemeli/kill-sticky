@@ -21,6 +21,10 @@ const func = () => {
   document.documentElement.style.cssText += fix;
 };
 
-chrome.browserAction.onClicked.addListener(() => {
-  chrome.tabs.executeScript({ code: `(${func.toString()})()` });
+browser.action.onClicked.addListener(async (tab) => {
+  try {
+    await browser.scripting.executeScript({ target: { tabId: tab.id }, func });
+  } catch (err) {
+    console.error("kill-sticky failed:", err);
+  }
 });
