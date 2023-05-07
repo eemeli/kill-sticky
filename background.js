@@ -6,7 +6,8 @@ const func = () => {
       const { display, position } = window.getComputedStyle(node);
       if (
         (position === "fixed" || position === "sticky") &&
-        display !== "none"
+        display !== "none" &&
+        node.tagName !== "BODY"
       ) {
         node.parentNode.removeChild(node);
       } else {
